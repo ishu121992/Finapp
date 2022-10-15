@@ -1,4 +1,4 @@
-import yfinance as y
+import yfinance as yf
 import streamlit as st
 import pandas as pd
 
@@ -16,5 +16,5 @@ tickerSymbol = 'GOOGL'
 tickerData = yf.Ticker(tickerSymbol)
 tickerdf = tickerData.history(period='1d', start='2010-5-31', end='2020-5-31')
 
-st.line_chart(tickerdf.close)
-st.line_chart(tickerdf.volume)
+st.line_chart(tickerdf.Close)
+st.line_chart(tickerdf.Volume)
